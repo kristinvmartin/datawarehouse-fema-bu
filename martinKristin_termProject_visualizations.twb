@@ -1,0 +1,1906 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0326.1623                               -->
+<workbook original-version='18.1' source-build='2020.1.2 (20201.20.0326.1623)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Relief_Fact+ (cs689TermProj)' inline='true' name='federated.00f5mgv1idesxz16dl02v1o4u702' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='MARTINPC-01' name='sqlserver.09tvat51bbblh8118olzv1c201kn'>
+            <connection authentication='sspi' class='sqlserver' dbname='cs689TermProj' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' server='MARTINPC-01' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Relief_Fact].[dateTimeId]' />
+              <expression op='[DateTime_Dimension].[dateTimeId]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Relief_Fact].[disasterId]' />
+                <expression op='[Disaster_Dimension].[disasterId]' />
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Relief_Fact].[locationId]' />
+                  <expression op='[Location_Dimension].[locationId]' />
+                </expression>
+              </clause>
+              <relation connection='sqlserver.09tvat51bbblh8118olzv1c201kn' name='Relief_Fact' table='[dbo].[Relief_Fact]' type='table' />
+              <relation connection='sqlserver.09tvat51bbblh8118olzv1c201kn' name='Location_Dimension' table='[dbo].[Location_Dimension]' type='table' />
+            </relation>
+            <relation connection='sqlserver.09tvat51bbblh8118olzv1c201kn' name='Disaster_Dimension' table='[dbo].[Disaster_Dimension]' type='table' />
+          </relation>
+          <relation connection='sqlserver.09tvat51bbblh8118olzv1c201kn' name='DateTime_Dimension' table='[dbo].[DateTime_Dimension]' type='table' />
+        </relation>
+        <cols>
+          <map key='[calendarDate]' value='[DateTime_Dimension].[calendarDate]' />
+          <map key='[calendarDayOfMonth]' value='[DateTime_Dimension].[calendarDayOfMonth]' />
+          <map key='[calendarDayOfWeek]' value='[DateTime_Dimension].[calendarDayOfWeek]' />
+          <map key='[calendarMonthOfYear]' value='[DateTime_Dimension].[calendarMonthOfYear]' />
+          <map key='[calendarWeekOfYear]' value='[DateTime_Dimension].[calendarWeekOfYear]' />
+          <map key='[calendarYear]' value='[DateTime_Dimension].[calendarYear]' />
+          <map key='[currentIndicator]' value='[Disaster_Dimension].[currentIndicator]' />
+          <map key='[dateTimeId (DateTime_Dimension)]' value='[DateTime_Dimension].[dateTimeId]' />
+          <map key='[dateTimeId]' value='[Relief_Fact].[dateTimeId]' />
+          <map key='[designatedArea]' value='[Disaster_Dimension].[designatedArea]' />
+          <map key='[disasterId (Disaster_Dimension)]' value='[Disaster_Dimension].[disasterId]' />
+          <map key='[disasterId]' value='[Relief_Fact].[disasterId]' />
+          <map key='[femaDisasterNumber]' value='[Disaster_Dimension].[femaDisasterNumber]' />
+          <map key='[fiscalQuarter]' value='[DateTime_Dimension].[fiscalQuarter]' />
+          <map key='[fiscalYear]' value='[DateTime_Dimension].[fiscalYear]' />
+          <map key='[haAmount]' value='[Relief_Fact].[haAmount]' />
+          <map key='[haEligible]' value='[Relief_Fact].[haEligible]' />
+          <map key='[haReferrals]' value='[Relief_Fact].[haReferrals]' />
+          <map key='[ihpAmount]' value='[Relief_Fact].[ihpAmount]' />
+          <map key='[ihpEligible]' value='[Relief_Fact].[ihpEligible]' />
+          <map key='[ihpReferrals]' value='[Relief_Fact].[ihpReferrals]' />
+          <map key='[incidentType]' value='[Disaster_Dimension].[incidentType]' />
+          <map key='[locCity]' value='[Location_Dimension].[locCity]' />
+          <map key='[locCounty]' value='[Location_Dimension].[locCounty]' />
+          <map key='[locPriorRegion]' value='[Location_Dimension].[locPriorRegion]' />
+          <map key='[locRegion]' value='[Location_Dimension].[locRegion]' />
+          <map key='[locState]' value='[Location_Dimension].[locState]' />
+          <map key='[locZipCode]' value='[Location_Dimension].[locZipCode]' />
+          <map key='[locationId (Location_Dimension)]' value='[Location_Dimension].[locationId]' />
+          <map key='[locationId]' value='[Relief_Fact].[locationId]' />
+          <map key='[locationIndex]' value='[Location_Dimension].[locationIndex]' />
+          <map key='[onaAmount]' value='[Relief_Fact].[onaAmount]' />
+          <map key='[onaEligible]' value='[Relief_Fact].[onaEligible]' />
+          <map key='[onaReferrals]' value='[Relief_Fact].[onaReferrals]' />
+          <map key='[rowEffectiveDate]' value='[Disaster_Dimension].[rowEffectiveDate]' />
+          <map key='[rowExpirationDate]' value='[Disaster_Dimension].[rowExpirationDate]' />
+          <map key='[totalValidRegistrations]' value='[Relief_Fact].[totalValidRegistrations]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>disasterId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[disasterId]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>disasterId</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locationId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[locationId]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>locationId</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dateTimeId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[dateTimeId]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>dateTimeId</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>totalValidRegistrations</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[totalValidRegistrations]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>totalValidRegistrations</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ihpReferrals</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ihpReferrals]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>ihpReferrals</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ihpEligible</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ihpEligible]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>ihpEligible</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ihpAmount</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ihpAmount]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>ihpAmount</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>2</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>haReferrals</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[haReferrals]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>haReferrals</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>haEligible</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[haEligible]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>haEligible</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>haAmount</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[haAmount]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>haAmount</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>2</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>onaReferrals</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[onaReferrals]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>onaReferrals</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>onaEligible</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[onaEligible]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>onaEligible</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>onaAmount</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[onaAmount]</local-name>
+            <parent-name>[Relief_Fact]</parent-name>
+            <remote-alias>onaAmount</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>20</precision>
+            <scale>2</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locationId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[locationId (Location_Dimension)]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locationId</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locRegion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locRegion]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locRegion</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locPriorRegion</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locPriorRegion]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locPriorRegion</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>2</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locState</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locState]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locState</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>40</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locCounty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locCounty]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locCounty</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locCity]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locCity</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locZipCode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locZipCode]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locZipCode</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locationIndex</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[locationIndex]</local-name>
+            <parent-name>[Location_Dimension]</parent-name>
+            <remote-alias>locationIndex</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>disasterId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[disasterId (Disaster_Dimension)]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>disasterId</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>femaDisasterNumber</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[femaDisasterNumber]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>femaDisasterNumber</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incidentType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incidentType]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>incidentType</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>40</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>designatedArea</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[designatedArea]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>designatedArea</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>255</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rowEffectiveDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[rowEffectiveDate]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>rowEffectiveDate</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rowExpirationDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[rowExpirationDate]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>rowExpirationDate</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>currentIndicator</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[currentIndicator]</local-name>
+            <parent-name>[Disaster_Dimension]</parent-name>
+            <remote-alias>currentIndicator</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_BIT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_BIT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dateTimeId</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[dateTimeId (DateTime_Dimension)]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>dateTimeId</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>18</precision>
+            <scale>0</scale>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[calendarDate]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarDate</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarDayOfWeek</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[calendarDayOfWeek]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarDayOfWeek</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>false</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarDayOfMonth</remote-name>
+            <remote-type>17</remote-type>
+            <local-name>[calendarDayOfMonth]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarDayOfMonth</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_UTINYINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarMonthOfYear</remote-name>
+            <remote-type>17</remote-type>
+            <local-name>[calendarMonthOfYear]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarMonthOfYear</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_UTINYINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarWeekOfYear</remote-name>
+            <remote-type>17</remote-type>
+            <local-name>[calendarWeekOfYear]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarWeekOfYear</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_UTINYINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendarYear</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[calendarYear]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>calendarYear</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fiscalQuarter</remote-name>
+            <remote-type>17</remote-type>
+            <local-name>[fiscalQuarter]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>fiscalQuarter</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>3</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TINYINT&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_UTINYINT&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fiscalYear</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[fiscalYear]</local-name>
+            <parent-name>[DateTime_Dimension]</parent-name>
+            <remote-alias>fiscalYear</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Eligibility Ratio' datatype='real' name='[Calculation_759419532529602566]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[ihpEligible]/([ihpEligible]+[ihpReferrals])' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Calendar Date' datatype='date' hidden='true' name='[calendarDate]' role='dimension' type='ordinal' />
+      <column caption='Calendar Day Of Month' datatype='integer' name='[calendarDayOfMonth]' role='dimension' type='quantitative' />
+      <column caption='Calendar Day Of Week' datatype='string' hidden='true' name='[calendarDayOfWeek]' role='dimension' type='nominal' />
+      <column caption='Calendar Month Of Year' datatype='integer' name='[calendarMonthOfYear]' role='dimension' type='quantitative' />
+      <column caption='Calendar Week Of Year' datatype='integer' hidden='true' name='[calendarWeekOfYear]' role='dimension' type='quantitative' />
+      <column caption='Calendar Year' datatype='integer' name='[calendarYear]' role='dimension' type='quantitative' />
+      <column caption='Current Indicator' datatype='boolean' hidden='true' name='[currentIndicator]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='dateTimeId (DateTime Dimension)' datatype='integer' hidden='true' name='[dateTimeId (DateTime_Dimension)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Date Time Id' datatype='integer' hidden='true' name='[dateTimeId]' role='dimension' type='ordinal' />
+      <column caption='Designated Area' datatype='string' name='[designatedArea]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='disasterId (Disaster Dimension)' datatype='integer' hidden='true' name='[disasterId (Disaster_Dimension)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Disaster Id' datatype='integer' hidden='true' name='[disasterId]' role='dimension' type='ordinal' />
+      <column caption='Fema Disaster Number' datatype='integer' hidden='true' name='[femaDisasterNumber]' role='dimension' type='ordinal' />
+      <column caption='Fiscal Quarter' datatype='integer' name='[fiscalQuarter]' role='dimension' type='quantitative' />
+      <column caption='Fiscal Year' datatype='integer' name='[fiscalYear]' role='dimension' type='quantitative' />
+      <column caption='Ha Amount' datatype='real' name='[haAmount]' role='measure' type='quantitative' />
+      <column caption='Ha Eligible' datatype='integer' name='[haEligible]' role='measure' type='quantitative' />
+      <column caption='Ha Referrals' datatype='integer' name='[haReferrals]' role='measure' type='quantitative' />
+      <column caption='Ihp Amount' datatype='real' name='[ihpAmount]' role='measure' type='quantitative' />
+      <column caption='Ihp Eligible' datatype='integer' name='[ihpEligible]' role='measure' type='quantitative' />
+      <column caption='Ihp Referrals' datatype='integer' name='[ihpReferrals]' role='measure' type='quantitative' />
+      <column caption='Incident Type' datatype='string' name='[incidentType]' role='dimension' type='nominal' />
+      <column caption='City' datatype='string' name='[locCity]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='County' datatype='string' name='[locCounty]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Loc Prior Region' datatype='string' hidden='true' name='[locPriorRegion]' role='dimension' type='nominal' />
+      <column caption='Region' datatype='string' name='[locRegion]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column caption='State' datatype='string' name='[locState]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='ZipCode' datatype='string' name='[locZipCode]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+      <column aggregation='Sum' caption='locationId (Location Dimension)' datatype='integer' hidden='true' name='[locationId (Location_Dimension)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Location Id' datatype='integer' hidden='true' name='[locationId]' role='dimension' type='ordinal' />
+      <column caption='Location Index' datatype='integer' hidden='true' name='[locationIndex]' role='measure' type='quantitative' />
+      <column caption='Ona Amount' datatype='real' name='[onaAmount]' role='measure' type='quantitative' />
+      <column caption='Ona Eligible' datatype='integer' name='[onaEligible]' role='measure' type='quantitative' />
+      <column caption='Ona Referrals' datatype='integer' name='[onaReferrals]' role='measure' type='quantitative' />
+      <column caption='Row Effective Date' datatype='date' hidden='true' name='[rowEffectiveDate]' role='dimension' type='ordinal' />
+      <column caption='Row Expiration Date' datatype='date' hidden='true' name='[rowExpirationDate]' role='dimension' type='ordinal' />
+      <column caption='Total Valid Registrations' datatype='integer' name='[totalValidRegistrations]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_759419532529602566]' derivation='Avg' name='[avg:Calculation_759419532529602566:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[haAmount]' derivation='Sum' name='[sum:haAmount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[haReferrals]' derivation='Sum' name='[sum:haReferrals:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ihpAmount]' derivation='Sum' name='[sum:ihpAmount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ihpReferrals]' derivation='Sum' name='[sum:ihpReferrals:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[onaAmount]' derivation='Sum' name='[sum:onaAmount:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[onaReferrals]' derivation='Sum' name='[sum:onaReferrals:qk]' pivot='key' type='quantitative' />
+      <drill-paths>
+        <drill-path name='Calendar Hierarchy'>
+          <field>[calendarYear]</field>
+          <field>[calendarMonthOfYear]</field>
+          <field>[calendarDayOfMonth]</field>
+        </drill-path>
+        <drill-path name='Fiscal Calendar Hierarchy'>
+          <field>[fiscalYear]</field>
+          <field>[fiscalQuarter]</field>
+        </drill-path>
+        <drill-path name='Location Hierarchy'>
+          <field>[locState]</field>
+          <field>[locCounty]</field>
+          <field>[locCity]</field>
+          <field>[locZipCode]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.555416' measure-ordering='alphabetic' measure-percentage='0.444584' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haAmount:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haReferrals:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[avg:Calculation_759419532529602566:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpAmount:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaAmount:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpReferrals:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Eligibility Ratio &amp; Count of Referrals'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Relief_Fact+ (cs689TermProj)' name='federated.00f5mgv1idesxz16dl02v1o4u702' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00f5mgv1idesxz16dl02v1o4u702'>
+            <column caption='Eligibility Ratio' datatype='real' name='[Calculation_759419532529602566]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[ihpEligible]/([ihpEligible]+[ihpReferrals])' />
+            </column>
+            <column-instance column='[Calculation_759419532529602566]' derivation='Avg' name='[avg:Calculation_759419532529602566:qk]' pivot='key' type='quantitative' />
+            <column caption='Fiscal Year' datatype='integer' name='[fiscalYear]' role='dimension' type='quantitative' />
+            <column caption='Ihp Eligible' datatype='integer' name='[ihpEligible]' role='measure' type='quantitative' />
+            <column caption='Ihp Referrals' datatype='integer' name='[ihpReferrals]' role='measure' type='quantitative' />
+            <column-instance column='[fiscalYear]' derivation='None' name='[none:fiscalYear:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[fiscalYear]' derivation='None' name='[none:fiscalYear:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ihpReferrals]' derivation='Sum' name='[sum:ihpReferrals:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2004' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2005' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2006' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2007' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2008' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2009' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2010' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2011' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2012' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2013' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2014' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2015' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2016' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2017' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2018' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2019' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2020' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2021' />
+              <groupfilter function='member' level='[none:fiscalYear:ok]' member='2022' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpReferrals:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[avg:Calculation_759419532529602566:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#4e79a7' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpReferrals:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f28e2b' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.00f5mgv1idesxz16dl02v1o4u702].[avg:Calculation_759419532529602566:qk] + [federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpReferrals:qk])</rows>
+        <cols>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</cols>
+      </table>
+      <simple-id uuid='{89268D32-654C-43BA-AA23-015D89AB5BA2}' />
+    </worksheet>
+    <worksheet name='FY 2019 - IHP Awards by State &amp; Incident Type'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Relief_Fact+ (cs689TermProj)' name='federated.00f5mgv1idesxz16dl02v1o4u702' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00f5mgv1idesxz16dl02v1o4u702'>
+            <column caption='Fiscal Year' datatype='integer' name='[fiscalYear]' role='dimension' type='quantitative' />
+            <column caption='Ihp Amount' datatype='real' name='[ihpAmount]' role='measure' type='quantitative' />
+            <column caption='Incident Type' datatype='string' name='[incidentType]' role='dimension' type='nominal' />
+            <column caption='State' datatype='string' name='[locState]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[fiscalYear]' derivation='None' name='[none:fiscalYear:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[incidentType]' derivation='None' name='[none:incidentType:nk]' pivot='key' type='nominal' />
+            <column-instance column='[locState]' derivation='None' name='[none:locState:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ihpAmount]' derivation='Sum' name='[sum:ihpAmount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]' included-values='in-range'>
+            <min>2019</min>
+            <max>2020</max>
+          </filter>
+          <slices>
+            <column>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:ihpAmount:qk]</rows>
+        <cols>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:locState:nk]</cols>
+      </table>
+      <simple-id uuid='{17DAF98D-CB21-4F38-8B84-C076A73D4D2C}' />
+    </worksheet>
+    <worksheet name='HA vs ONA Awards - Fiscal'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Relief_Fact+ (cs689TermProj)' name='federated.00f5mgv1idesxz16dl02v1o4u702' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00f5mgv1idesxz16dl02v1o4u702'>
+            <column caption='Fiscal Year' datatype='integer' name='[fiscalYear]' role='dimension' type='quantitative' />
+            <column caption='Ha Amount' datatype='real' name='[haAmount]' role='measure' type='quantitative' />
+            <column-instance column='[fiscalYear]' derivation='None' name='[none:fiscalYear:qk]' pivot='key' type='quantitative' />
+            <column caption='Ona Amount' datatype='real' name='[onaAmount]' role='measure' type='quantitative' />
+            <column-instance column='[haAmount]' derivation='Sum' name='[sum:haAmount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[onaAmount]' derivation='Sum' name='[sum:onaAmount:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaAmount:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haAmount:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaAmount:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haAmount:qk] + [federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaAmount:qk])</rows>
+        <cols>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</cols>
+      </table>
+      <simple-id uuid='{5C13A4A5-460B-4358-B9CA-D6A087655887}' />
+    </worksheet>
+    <worksheet name='HA vs ONA Referrals - Calendar'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Relief_Fact+ (cs689TermProj)' name='federated.00f5mgv1idesxz16dl02v1o4u702' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00f5mgv1idesxz16dl02v1o4u702'>
+            <column caption='Calendar Day Of Month' datatype='integer' name='[calendarDayOfMonth]' role='dimension' type='quantitative' />
+            <column caption='Calendar Month Of Year' datatype='integer' name='[calendarMonthOfYear]' role='dimension' type='quantitative' />
+            <column caption='Calendar Year' datatype='integer' name='[calendarYear]' role='dimension' type='quantitative' />
+            <column caption='Ha Referrals' datatype='integer' name='[haReferrals]' role='measure' type='quantitative' />
+            <column caption='Incident Type' datatype='string' name='[incidentType]' role='dimension' type='nominal' />
+            <column-instance column='[calendarDayOfMonth]' derivation='None' name='[none:calendarDayOfMonth:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[calendarMonthOfYear]' derivation='None' name='[none:calendarMonthOfYear:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[calendarYear]' derivation='None' name='[none:calendarYear:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[incidentType]' derivation='None' name='[none:incidentType:nk]' pivot='key' type='nominal' />
+            <column caption='Ona Referrals' datatype='integer' name='[onaReferrals]' role='measure' type='quantitative' />
+            <column-instance column='[haReferrals]' derivation='Sum' name='[sum:haReferrals:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[onaReferrals]' derivation='Sum' name='[sum:onaReferrals:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter from='&quot;Biological&quot;' function='range' level='[none:incidentType:nk]' to='&quot;Human Cause&quot;' />
+              <groupfilter from='&quot;Mud/Landslide&quot;' function='range' level='[none:incidentType:nk]' to='&quot;Volcano&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk]' field-type='quantitative' fold='true' max='4085149' min='-18213' minor-origin='0' minor-show='false' minor-spacing='100000.0' range-type='fixed' scope='rows' synchronized='true' type='space' />
+            <encoding attr='space' class='0' field='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk]' field-type='quantitative' major-origin='0' major-spacing='1.0' max='2021' min='2014' minor-origin='0' minor-spacing='1.0' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haReferrals:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haReferrals:qk] + [federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk])</rows>
+        <cols>([federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk] + ([federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarMonthOfYear:qk] + [federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarDayOfMonth:qk]))</cols>
+      </table>
+      <simple-id uuid='{0A9B9CBD-1DA7-466F-BF01-2DFB09F1C07E}' />
+    </worksheet>
+    <worksheet name='Referrals by Incident Type'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Relief_Fact+ (cs689TermProj)' name='federated.00f5mgv1idesxz16dl02v1o4u702' />
+          </datasources>
+          <datasource-dependencies datasource='federated.00f5mgv1idesxz16dl02v1o4u702'>
+            <column caption='Calendar Year' datatype='integer' name='[calendarYear]' role='dimension' type='quantitative' />
+            <column caption='Ha Referrals' datatype='integer' name='[haReferrals]' role='measure' type='quantitative' />
+            <column caption='Incident Type' datatype='string' name='[incidentType]' role='dimension' type='nominal' />
+            <column-instance column='[calendarYear]' derivation='None' name='[none:calendarYear:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[incidentType]' derivation='None' name='[none:incidentType:nk]' pivot='key' type='nominal' />
+            <column caption='Ona Referrals' datatype='integer' name='[onaReferrals]' role='measure' type='quantitative' />
+            <column-instance column='[haReferrals]' derivation='Sum' name='[sum:haReferrals:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[onaReferrals]' derivation='Sum' name='[sum:onaReferrals:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk]' included-values='in-range'>
+            <min>2015</min>
+            <max>2020</max>
+          </filter>
+          <slices>
+            <column>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:haReferrals:qk]' />
+              <text column='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]' />
+              <color column='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6556F90D-D510-43A0-8578-84BC43548FB6}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='HA vs ONA Awards - Fiscal'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:ok]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:locCounty:nk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:locState:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DA732B7B-A94D-40AC-8861-875878A37E18}' />
+    </window>
+    <window class='worksheet' name='Referrals by Incident Type'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00f5mgv1idesxz16dl02v1o4u702].[sum:onaReferrals:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:ok]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{2A14D0A0-7E34-4CEE-874C-A1814364BC1D}' />
+    </window>
+    <window class='worksheet' name='HA vs ONA Referrals - Calendar'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:calendarYear:qk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:ok]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{FE409B7C-F85D-4E62-9FCA-44AD4B37421C}' />
+    </window>
+    <window class='worksheet' name='FY 2019 - IHP Awards by State &amp; Incident Type'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:incidentType:nk]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:locState:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B8F092C8-D429-46A2-A4D5-AB728A3D2F5D}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Eligibility Ratio &amp; Count of Referrals'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='title' />
+            <card type='pages' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[:Measure Names]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:ok]</field>
+            <field>[federated.00f5mgv1idesxz16dl02v1o4u702].[none:fiscalYear:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CE9A80C5-F5E4-464B-B4B8-FEBC257B0CA4}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Eligibility Ratio &amp; Count of Referrals' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAfl0lEQVR4nO2deYwk133fP6+q+u6emZ772p3Z+yCXp8RDFElRpA6LkQQLUA4ESCwJjq3A
+      EZDECBI4iQQj/xgQHMRCDNiIkcRIItiwlEhOTFEkJR4SLYoiJXLJXe45u3NPz9VzdPd0V9V7
+      +aN3Z3e7e2f7qJ6umXkfYLHTXVW/+r3q+nbXe7/f7z2hlFJoNHsUC0BrQLNXsa7/sb6+7onB
+      bDZLNBr1xJbrupim6Rs7frUlpUQIgRDCNz55aauZPlkAQggSiYQnJwA8s+U4DpZl3XnHbbLj
+      V1uu62IYhicC8GP7mumT4YlVjWaHogWg2dNoAWj2NFoAmj1NzT2L7OoSV2fTHD9ykLnpcfIq
+      SGcEcmaC3o5YM3zUaJpGzQJYXMnQn7BYcyAajbA0t0x+ZYNg0sRNhHFdF8dxPHFOSumJLa/s
+      +NWWlNKzWI5f29csn2oWQCISYGJuhQPtWVbW1jFNg6AVxHEcTNPENM09NYzmB1t+Gwa1HRdX
+      KlxXYQKhgNmQb8285jVb7ejup6O7H4D4/gOeOKXZXfzRd97g1XfGN1//+e/9Ou2xUAs9uj3e
+      yMpj/vT7b3FuYhGlFEIIvvlPP+HJt5tGU4ovBTC1sMbFqaVWu6HZA+hhUM2eRgtAs6fRAtDs
+      abQANHsaLQDNnqb2SPDcFJNzae46dRcL01dZzthETIUIJRgZ7m+GjxpN06g9FyjvMtQVJ+dA
+      OBxBrduEwxHiySSu63qSCqG4Nazvum5D9vwY3vfSlt9SIZS81RfZ4D3hq1SI3u4OJlMrDNhZ
+      1nM52hIxVtdWMCIJ4tF2T1IhBLcGvUyz9aH0vO2wUXA2S+pioSCW1dgT5G5NhRDGrX4YDd4T
+      vkqFCEXbODTaBkA0OnLt3QFPnPMzz/3sIv/1uV9tvv76bzzJA0d3f7t3O7oTrNnTaAFo9jRa
+      AJo9jRaAZk/jy2xQzfaztJrj9OUUUroYhsmhoSTDPW2tdqvpaAFoABibWeYP//JvN19/+TP3
+      awFUQkmXTC5PPBYll82AGQDXJhCKYJn+eqKSUrG0ltscuw8FTBJRf1YmaVpDzQKYmZpgdS3L
+      6LGTrKWXmF1MEwwECEUSjO4fRCmFlLJBt0oiiUoh6oh0rmTyfOUPvr/5+ol7R/jnX3y4To9u
+      Pb8X7fTmWt2w00ggrDySXL9vpaaUkg2106vrVMlWXV/ZhiGwbbtYsohCCANQKKWaM9N0vTYr
+      fKj1+1D/oTsRTz9GH1+7mn8B+geHWc/mCZtgtLUT7+wDt0AoEsMwjM1/jVESSq8zzC9K/BBC
+      1O1b6fkbsXUdKaUH16r4rdZoKoSX7St1QzR4T3h1nSrZqlkAhmnRligeFgi0X3tXP1drdiZ6
+      FKgFvHFmivVcHikloWCAJ+4dufNBmqagBdACvv3SacZm0gC0xUJaAC3EX+OWGs02owWg2dNo
+      AWj2NFoAmj1NzZ3g1aUU43NpTh4/Smp6nExBIfNZ4p19DPR2NsNHzR5FSsVX/uB7KIqRoVMH
+      +/gXf+9RT89RswBWMnmGOsKsOxCLx2GjQGplCXNjw3dF8aXHKanq9k2qW0PxjRRq3xJlVTR8
+      vbwoii9NNVCqgfZ5VBQvlWJpbWPz9Wpmw5Nr1VBRfDIRYXwuzUh7lrnUHFa4jUgkQjgc8mx9
+      AK+K4k3z1oslDFG3b4a49WnRMIy6bd3SFEHD18uLovjSSKsQDbTPo6J4WSIkIer//K7TcFF8
+      vKObkx3dABw8cqIhZzSaVqM7wZo9jRaAZk+jBaDZ02gBaPY0WgCaPY0WgGZPowWg2dPUHAdI
+      TY8znUpz8p57WJoZZ3E1C06BwZFDJNtizfBRo2kaNQsg7yj6OhPYEkzTYniwj3PnLpCan6ct
+      FtapEFWgUyGq9EmVz8TR8lSIgf5eZuZXEIUstl0g5xoc2D9MMJ7UqRBVolMhqsOXqRBWMMK+
+      oQgA0ehoQ85oNK1Gd4I1exotAM2eRgtAs6fRAtDsabQANHsaLQDNnqZmAUgnz2xqAYD1lSUW
+      02s4+SyZDdtz57zCpLGFtjW7l5rjANNTMyjpkHW6UcJgeXGB1fwaomOIcG+HNyuNexwJ/sfx
+      H/B6/m6U3L+rIsGr2QIvvjVWnKZeCI4MdXLqYE9dtjyNBCtvIsFl6wzgTdS8oUiwZcLscoZE
+      b47JSxeIJntZz20gjTVG+jsRQmCaZkNOVooE14NpmgRwuDt4mQmnl0IDvlWKBNdrqzQSXK+d
+      tWyB//nC6c3Xn3vsGPcd6a/LVqVIcP3tK40E12erNBVCUP+1upmbbdQsgL6hEXoHi984bfc+
+      WHRsZH/xfyE2/3lNvTYPBqYYd/oYsBa5Kuq346VPzbLjX1v13ROiQnqTFz7dbKPmPsD1hROu
+      /3/972bc9F7woeA5Xt64ny5jpdWuaHzIrh4FsnAZtWY5UxghJGz8KVFNK9nVAoisX2bK7aZA
+      kJwKERfZVruk8Rm7WgD22Gu8mS9O3rXottNprrbYI43f2LUCUNJl9fLPuWAPAzDnJhkwl1rs
+      lcZv7FoByPRVZLSXAgEAptxu+s3FFnul8Ru7VgDOxZewRh7bfJ1yk/SKhRZ6pPEjNQtgKTXD
+      u6fP4CiYnRrn/KUxrly6wMR0qhn+1YVSEnfi55j7b8wlvyajrC9rAWhupeZAWCbvMNwVJ+dA
+      OBzBjASQ+XUibQnfrA+g1ucg1IYM3JilIk+Q+fQa3fkMmLWva+zHVAjXw/QFXRRfJd3JBBNz
+      KwzbWZZW0ohghNzaGiKUoC0W8UVRfGH8pwQOfYxCSdh8NhvgrsIqRmKgZp/8WBRveljIrovi
+      qyQS7+BovAOAkYNHGnKmGSilcK++Tujpfw+3fqkxU2hDrkzVJQDN7mTXdYJVbhllb2BEy9cr
+      S6ke5NJYC7zS+JVdJwB37FWsA49X3Kba9yPTV7bXIY2v2VUCUErhXP0p1sEnK2432gZRq9Pb
+      7JXGz+wqAWBnUPl1jPbhiptFqA21sYoqGdHR7F12lQCc8Z9j7fvw7XcwLUQwCoXM9jml8TUV
+      BbCcmuLNX75HY9Otbi9KKZzLP8Yc+ciW+4loN3J9bpu80vidigK4cPES85MT5CtsU0pSKBQL
+      4F3HxnYc7EKhbMx223FyqPQ4RtfRLXczkiOo9MQ2OaXxO2VxAOluEAxEsMJQqfpydnKcxeU1
+      Dt91irWFFKnFZVAQbetkdN8ASqmGp+oupRp77sxpjMH7QYgb+1eoqhbJA7hLlzEb9tG7dtZr
+      p/yo+n3y1FbpYXXeE6XHqArv1cPNNsoEIITJ8soKsVAEF67lUt5AKohFQziuS34jz8BAP0vL
+      a6DczZu/NKxeh4sl51SIOzTcvvRjrGO/dsu5y0LpKET7ftyLL9XsY9lMB7KBdpakQtRrR5Wl
+      LzRiqzztoPHPsYhUsi5bpZ8f1N++m4+/OaugPBIsDGJhi+UNWTFMPDA0xPJKBkvaRGMxHGnQ
+      09lGJNGxWSPceOV+SSrEHea+V66NWrqINXAKcVPKQnl4X2DGuyG7WLOPZTMdNNJOj2aFqNi+
+      um3d2r7GZoUotW3WZUuUpkLQ+KwQSqmtZ4UQwsQIKMZPX8J95vGyHQwzQFdnMRUiHA435IxX
+      yNQZjOSBW27+2xKMg1tAuTbCLP190+w1yu6Y3EqK1YzgxN3Hd0wRuXPpR1iHnqpqXyEEItyG
+      yqWb7JVmJ1AmgJmxK2TsFc5emNwRAlDSxZ15F3PowaqPEYlB1JqOCGsqPAIdvO8hhjZyBELh
+      HRElk+kJjI59CKv6HH+zcxS5fBVz4N4meqbZCVS8xxdmrvK/vv0XjE3Obrc/NeNcfAHr8DM1
+      HSOSB5DLOitUU0EASkkmZxZ46P4HSHa2tcKnqtksfazh8QfAaB9Grkw2ySvNTqLsEUipAovz
+      S0grxuFotBU+VY1anUIEY4hgbQt0i3A7Kr+2OauyZu9S9guQz67jSpfLF8eoNOO/vZHhysQ0
+      ClhbXiKzkWd64gormVzzvS3BufxKzY8/QLG/IAyw9Uxxe52yXwDDsOjp7aPNFRU7CLOpBSJC
+      krGLtbvZ7CrzC0tsqCDxcHBbi+Kd8TcIPP2N255vy5Xiwx046wuItuo6z7oovnp2dFF8MJIg
+      ETaYnEhXFEA4YDCdWmW0M0smvchirgDCQEq5rSvFy+wiQggC8a7b2tlqpXi3cxSxOonVOVKV
+      T7oovnp2dFF8Jr3IW++fJ2iGKQCRku09A/voGdgHQPuBwww25E79OJdfwbxN5Vc1GNdHgkYf
+      u/POml1L2Zd8tL2dD99/HyOHDtU+ZcQ2oZTCOfc3BA5/om4bZs8x5MIFD73S7EQq9AFCrK+l
+      mZua5ReRKI/ee6IVfm2JyswjrAgiXP8wrYh0IjPzHnql8TMzi+t8MD6PlBLDMPjIXfsIBa0K
+      9QCygFCKxazLw0O9rfD1jjhjr2IdqX3052ZEKA6ujXILCDPokWcav3L26jz/6a/e2Hx9z8E+
+      QkGrwjBoZh0bi8MHRunuvn0Hs1UopXDHXsMcrTz1SS2IcDtqQy+dtJcpE8Da0irReJyOjgSN
+      DTg1iY0VlFuoOPFVrRjtQ6iVKQ+c0uxUygSQXV3ivffe4/33z/lyeWln7FWs/Y94YsvoGEGm
+      r3piS7MzKesDjJ56gNFTD+DYtu+yQa/P/BB6/Hc9sWd0HsS5/IontjQ7k4r3+OryImdOv8fa
+      RqFs2/zMBL965zS2hLmJcVLLy5x9/zTLq9sw146Tvzbx1ZAn5kTbAHJVJ8XtZSoO9Z95711m
+      ZxdYduHJD99/y7YNWzLQmSDvQmdXN+nsKmuZDazFRdpi4aamQrhXXscY/nDV9rdMhQAItiGz
+      y1XZ06kQ1ePHVIjS9l2/TysKYHCgD7Otj3tOHC7b1t/bzdT8Cgk7y+LyAlnXZGS4n2C8s6mp
+      EAD22I8IPvglzCrtb5UKUcSiYAUx3Y3isOgW6FSI6vFjKkRp+67fpxWtGYbB2LkPuPfek2Xb
+      AuEYo/uK6cfR6P66nKkL6SCXrmB0HvDUrIh0orKLdxSAZndSIR16lYmZFIFA0Fc1we7km1hD
+      D1Q380MNGMkRZHrcU5uanUPFQFiu4OJI11cCcK78pK7c/zthdB5CLl/x3K5mZ1D2CNTWM8jH
+      nxpEuj4SgFLI1FmMJ7wZ/rwZo2M/9tWfeG5XszO4bY/CaHh2N+9wU2cxeo55/vgDYMR7UFm9
+      gvxexW+xroo4F1/AGv1oc4yH2lCFdZRbqQBUs9vZAQJQuJNvYu57qCnWhRCIYBxVWG+KfY2/
+      qVkA+ewqF8fGUcDyfIr1XJ7syiJLa80piu8zljGSo01NWRaJftSa/+dA0nhPzVGF1EKajqBi
+      3S6uFL++kWEtNYPVPkB71Pui+A+FPsA48Nm6bN4xEnydjlGchUuoztuve6wjwdWz4yPBWxEN
+      mUylVhjtyLK8mGIxZxN0HfKZLGZ/l+eR4LuDYwQPPoGow+adI8HX6BzFnX57S791JLh6dnwk
+      eCu6+obo6ismo7XFDjW1KL7LWGFDBaHJFVtGx37ss3/d1HNo/ImvO8EPhs7xdn7rNb+8QEQ7
+      UZl5z5d20vgfXwvgnsBl3i5sgwCsMAgTnErLAmp2M74VQEzkcDHIqO1Zhaa4aMbytpxL4x98
+      K4CcCvI/1j9B6XphzcLo2I9c0cun7jV8KwCJybxMbtv5ijPFXdm282n8gW8FsN0YnVoAexEt
+      gGuIWI+OBu9BahZAemGW0+9/gKsgNTXJ0uoqVy5dYHJ2Z08zKKKdxUUzpB8ng9E0i5oDYWs5
+      m+HOKBkHkslO0oUCsViMYCyG67rbuj7Anag6FeL6djOAm1uFUKJsm06FqJ5dnQrR1R5jfC7N
+      vvYsi4sp1myJs5GjKxij3Yxu2/oA1VB1KsQ1nHgfIreAGSvvfOtUiOrZ1akQ0bZOjrcVpyWM
+      RUfpr8sdf2J0HkCmxzG7b58Up9ld6E7wTRgdI3r51D2GFsBNFIdC9VyhewktgJsQ0e4dWR/8
+      dPgXHLV0FLsetABuQgSjIG3UDkqKE0ieCL/LU5G3W+3KjkQLoAQRjKEK2zDRr0cctqYYcwbo
+      NlYIi/LJjDVbowVQgtGxH7WDZop7OHSGn+VP8m7hEPcGL7banR1HzQJQSm0Wjlz/++b3djqb
+      y6fuAEwhGbXmuGgP8VbhGKO5t3fN57Bd1BwHmJu6ykwqzcn77iM9OY6KRkhNTpPo6mN0uBgV
+      aMaH4JXNO9kRHftxx16t6nzb5dPt6M1f5GV7Hw4W0243ly+9yKlCBhWMtdSvCpZafq0qHaWU
+      ql0Ajgs9yQSOVCSvrQ8QT3aBayOl3EyHaIRmpkLcyZaKD+CuTJftVykVol6/SlMh6rVjn/sB
+      b+RvLGP7y40DHLv0MubRT9dsq1IqRN3tK0uFqM9W6c2uqP9aqQqpEK7r1i6AgaEBUotriEKO
+      9OoyG9KiLRIgnuxp6voA25EKAaASPdi5BUzTuGUqRr+lQig7y9zYe0y6n998rzD8BHLsZYIn
+      nq35eu2IVAjqTxvxLBXCtEIM9IUAiEajdTnjZ4RhgRUGOwcePUo0A+fq3+L03Ie8cmMOVyM5
+      iio8D4X1igl9mnL0KFAFRLTL9wEx5+KLBI5+sux96+DHcK7o2a6rRQugAsWcoCutduO2qPwa
+      amMVo+tQ2Tbr0MdxLryoR4OqRAugAsVVY/ybE+Rcff3aWsnlz/lGvBflbEB+dfsd24FoAVTA
+      SI769hdAKYVz7jmsQx+/7T7WgY/ijL22jV7tXLQAKmDE+1DrqVa7URGVWUA5eUTbwG33sQ4/
+      g3PpJf0YVAVaABUQ4TaUnfXlohnO2CtYB5/ccrUcI9aDsnOonL878n6gZgFkV5c4e/4ySsHs
+      1DiT07NcvnCO1OJKM/xrGSIQAZ8lxSmlcMdexTpSPvpTinXwKZyLL22DVzubmuMAiysZ+hMW
+      aw7YUqDcDOuZLCKUxe2I7+ii+FuID2CnJzACxfWD/VAUr9ZnUUYAGWxDOs6WRfHiwMewX/oG
+      xskvVGVbF8VXSSIaZHIuzWh7Ftw8jrIIhkJYlrkrIsHXkV2HECvjWAOnAH9EgguXf0Tg0FOb
+      +29ZFN/Wh60kRj6NEeu+o+0dEQn2Q1F8R1cfHV19AMRHD9flzE7ASI7gTr3Vajc2UUrijL1K
+      5DPfrPoY68gncC6+SPDev99Ez3Y2uhN8G4z2fcjV6Va7sYlcvoqIdiEiHVUfYx16CufSj/Vo
+      0BZoAdwGEe8pDjn65OZxLrxA4PjfqekYI9qFMIOozEKTvNr5aAHchs1VKX1QH6ykizv9Nubw
+      gzUfax37NZyLLzTBq92BFsAWiHA7Kt/64V05/wFGYgARqD371jr4BM7Ya775JfMbWgBbYHT6
+      IyXCPvdcVWP/lRDBeLHQP+PPyHar0QLYAqNjBLl0paU+KLeATJ3FHLyvbhvW4adxLrzooVe7
+      By2ALTCSo8gWzxAh585g9t1VjEzXiXXgcZwr+jGoErVHguemmJxLc9epu5i4dA5HBHHzWfqG
+      R0m2+beCqh5EYgC11tqhUPv8Dwgcf7YhG8XHoDhqZQLRsd8jz3YHNQsgm3cZ6oqTc8AMRjDs
+      LKnMBoHlZdpi4d2TCgEQbEPm0jh2oTWpEHYOd/ESVueRivvUsj6Acehp8ud+QODBL1fcrlMh
+      qqS3O8lkKs2AnSUWDuBE+xgOrRKMt++qVIjrFAJRTGW3JBXCmfglVv/dWMHKS8XWsj6AefBJ
+      cv/7tzEf+s2K11KnQlRJKJrg0Gix4PpGUfz2rea43RiJfuTaTEvO7Vx8kcC9/8ATWyIYLQb3
+      0lcRyVFPbO4GdCf4DhjJkZZMma4KGWRmEaPnmGc2raOfxj7/Q8/s7SQMXI4HrvLF6I9JiMxN
+      72u2pFXlkc7EG1jDH9qy8KVWrNGP4l551TN7fkcphVyZJP/mf+Hou1/n/uAFUjLJlxN/gymK
+      fYLGHtb3AEbH/mJhSfixbTunUgrn/A8JPfJVT+2KQASRGMRduozZedBT235C2VnciZ9jn/lr
+      UBLr2Kc4e/zf8O3z7wFg4fLRqVeg7VktgDsh4v3I9Tmo3A9tCiq3hMotN2XIMnDyczjnf4j5
+      yG97bruVKCWRS2M4Z7+PO/se5vCHCT32NYzkCADi7RsTHr+08QBfePM7DHQMawHcCREIg3Rg
+      G+uD3Ss/wTrwRF0jX3fC3P8IhTf/DPXwbzXF/najNlZwLv0Y+/zziEgHgROfI/jo7yDMwBZH
+      CUJP/zvyr31DC6AaRDCOste35VxKKZyxVwl97F83xb4wrGK/ZvHijl0NU7kO7txpnPe/h1yf
+      xTr4McKf+g8Y0a6qbRjxPkJP/G7tApDSIZPNk4jHKGzkkMIiYIKrDIIB884GdiBGxwhyZntG
+      glRmAZTCiPU07RzFSrEXdpgAFKHCIoW3/jvOldcwug4TuPsLGH13IYz67juz/1TtApidmmRt
+      Pcf+oyeYnhjHFRZBN4NKDDHSnyz2vEuibrVTEkmUCiFqz2MpnRK7bt+SI8gz54HRxm2Vom6N
+      UjoXX8QYfbwq22W5PVX6ZAx9iPwbf0rgod/i+uxyZVORN9C+MrekrMuWVIoQBY4Fx3k89C4D
+      MogKf5HQs/8RcW3iYkX551zZp5J76lr76hpjE4BtF5+JpZ1neSXD6tpaxRPtBoyOEdiOqRKV
+      wrn8MtaBJ5p7HsPC6DqIO3++ueepE2XncK7+lMJLv8/X2r/DqDnLd7NP8N3wVwic+Ozmze8F
+      Nf8C9A8Nk8nmCZuwb99+pLAIBUxcpTAMY/NfY5SE0g1RV4dNlIX3RX2+deyj07i1MKZuW6WI
+      G2F6mR5HhOKYseqeZcuuSQ0+BY58EueD/0ug70RFW420r8ytKu4J5RRwp3+Jc+F55NIY5uD9
+      BO77h3zz5WOoa9/TAzTiU8k9da19NQvAMCwS8WuHBW70tHdzb1rEuhmMbCCW5eaH0Qyciy9h
+      HftM0+zfjDn0IPmf/hFKSU+DbbWgXAe58AHO+R/ips4Wn+tPfh6j9yTCDCClQtHc5V93833r
+      GUIY9HYnsaZd7CYJQEkXZ/JNIvf83abYL0WYAcy+u5Az7zZUbFMrSjrIhQs4F17ATZ3B6BjB
+      OvrJ4tClFdw2P66jBVAl0eQAHcY687I5iX9y8RJGrMfT59s7YR15BvvCD7dBAAp38RLOuedw
+      p95GtA0SOPZpgg//E4S1jRHGCmgBVEvHCIPWHPOF5gjAOf8c1uFnmmL7dpiDD1D46bdQsrFF
+      DSuj6DHSPBA6D8+9TCHRSeDwMwQf/A1EKN6E89WHFkCVLIke+s0zvIP3s+Ep18adeYfgQ7/p
+      ue2tEGYAo+8k7sw7QL9ndjuMdb4Uf46Y2ODn+eMYz/xbIh3VB6m2Ey2AKplxu+gzl5tiW86f
+      w+g6Ute0J40SOP4s9rnnYOAfNWxLuQXs03/Fw3P/h7/I38u79kFAIAP++cYvRadDV8mC206v
+      kabyksuNYZ9/nsDRT3lutxqMvruR8+eL+U51opTCmfwFue/9M3ALPJ/8Ku/ah6i0hJPfqPkX
+      YHUpxfhsmpMnjjI9fhlHBMHOEYx3Mtjnz585L9hQQdqFg4FCevjBCmcDOX8W47GveWazpvMb
+      JubAPdceg2pHrs1R+Nkfo6RD+JmvY7QNwsXXPfayedQsgJVMnqFkmHUHlBHAUJJoIo4ZDm2u
+      vr1riuJvQipJXgUIiwJZFfasKH5YjiG6j+MqATXaq6UofivEoWdwvv8nwI2ahzvacgs4738X
+      OfYy5gNfwtr3EBKBdJzdXRSfTEQZn0sz0p7FwsUxAqRSi3QPRndlUfx1DGGQcpP0mMtcdQY8
+      K4p/NPIBwWP/CrMOW7UUxW+F6jvBsLWAiYuLuaUtpRTu5JsU3vwzrJFHCX3+PyOs0K1+7Oai
+      +HhHFyev9ehj0dHim8NDdTm105h1uxgwl7jq3H6BuloIUmAklsPoPeGJvXoRhknvsUc4Mj7B
+      B/bobfeTa7PkX/8WQhiEn/kGxhYL9e0U9ChQDUy7XRwPeDdT3IngVc47+7mnznReL1ntf5yP
+      hv6wogCUk8d+9y9xLr9C8NGvYg7e37L0Ca/ZHa3YJhbcdno9GwpVPBI6w5v54x7Za4wpt48B
+      axGLG4+NSimc8Z+R+97vgFJEfv2PsYYe3DU3P+hfgJpYkO10GSv0GksEMpO4izlAgnRByc2y
+      SeUWige4hWKPVzoo5Rb3ky73qF8yEk7Taawx4/hj5EwiOFsY4e7gZX5VOAqZFBvP/zeEGSD8
+      id/fFY87ldACqAGFwTuFw3wu+jrJy1exl+LFHq1hgRAI41p27PVOoRG49r4FhnltP5OgyuMq
+      gz9f/xQq7J+x8jfyJ/hs9HX6zWUenk0ReOZfYg7et6u+8UupvSTSLbCUztDdlSS3vopjBHE3
+      MkTbOgharX+WbTb/L/cRAL5+6kmGj9b3rfiLV3/AWD4NQJtnnjXOlNuDicRRBm8d/j2eHTrZ
+      apeaTs0CmJ6axi4UiLYnmZ1LId0CmBHM1SwHRvc1w0fNNiEx+NbaFwDBl9Xu/zKDOjrBpoBM
+      No9d2MB1CjhSsJHLFH/iNbsA/zySbQe1l0QO76er38UyTeKHjqKEgZIO5pbzsGg0/kSoIqyv
+      ezPvjeu6mGZjvwZ520FKhZQKwxBEQvWJSynFRsHZtGMa9U/d4rgS23E3bQUDZlkktlryBefa
+      rAQK0zQIB+sbi5BSkbcdlFLFKKlpEKizH+ZKScG+0b6AZWKZ9bWvYLu4Um7aCgetuiL5SsFG
+      wd60YxgGIY8+v+s+CeXxNA5SSm+KxT205UefvLQlpSx+mB7M9ObX9jXLp/8PCxUeO7bfuqMA
+      AAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='FY 2019 - IHP Awards by State &amp; Incident Type' width='192'>
+      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
+      lX4+NdFX8j9ARzfvAKIB0wAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='HA vs ONA Awards - Fiscal' width='192'>
+      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
+      E/YuRQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='HA vs ONA Referrals - Calendar' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAPpklEQVR4nO3dy29b2X0H8O998iGRer/8HMexPZ7x+BFPM1PMBAhmkAkCdFUgQNCm6K5d
+      dNl1F0V3/Qu66K7dtCi6KQIEmE6KGtPEresmaeNxbI8fkmzrbZHi+97z6EImKZGydEmRIqnz
+      /QAGfCSeew7J+xUvee+Px9JaaxAZygUAZoBM5Vb/k8/nD7WhYrGIZDLZcr9q+CzLarmvlBKO
+      4/R9v16MWS6X4fs+bNtuue9hxj1s36Me2wW2d75UKtXWgDu1sw2lFAC09UQJIeC67sE37HG/
+      Xoxp2zbi8XjbO1Iv7msvxm7vzwPRMcEAkNEYADIaA0BGYwDIaAwAGa39z6qIBoiQEgr1E76e
+      7cCyLAaAzPD3v7qL+2srtfZffe8H8B03WgDCwiYeLG5gbjKNja0S0jEgtGJIJxMQUmFiYqxr
+      EyfqpkgBKBdLUEpgM19G0rVQURYsXcL9//0t3n7/I0gpIaWEEKLlCVQvhaieEW6FUqqtMY+6
+      Xy/GVEpBStn2dV69uK/dHLvxcZBCQuiIAXDiSXh6EzHXxlaxgpSvIewYLlx+F6WtDEZnp+A4
+      Tlunr3kpRHf62bYNx3F4KcRrjdeaOa4DN+ohUDI1isvvjrY1IaJ+xo9ByWgMABmNASCjMQBk
+      NAaAjMYAkNEYADIaA0BGYwDIaAwAGY0BIKMxAGQ0BoCMxgCQ0SJdDq2VxH/euYvTc1MoKxdW
+      WICwfQz7LrSXwMnZqW7Pk6grIgVgefEJsrkiTszayGYyGB9Lw9cSzxfmcf6991kR1odjsiJs
+      t0NVhM2dvYDh8VlABlC2h3TchrDjuHJjFqEI4TgJVoT12ZisCNvtUBVhQP2bn1MsDKNjhG+C
+      yWgMABmNASCjMQBkNAaAjMYAkNEYADIaA0BGYwDIaAwAGY0BIKMxAGQ0BoCMFvlq0Hw+j0TM
+      w1YxQNwFpOUh5jlQSiEWi3VzjkRdEykAIijif359D2dPTqEcSLiOBQ2NYnYLM2e/iSnPqxVg
+      tKpaqNBO4YbWuu0xj7JfL8Y8zFwP278/x969fympICGjBeDV+jqUqKBcCVEJFWwPkLaDeDyG
+      IAhhWRYsy2qrqOUwBTFa64Ho14sxq8/HUc/3sH27N/bughjL3n58IgVg+sQZTMychGUBoVBw
+      bEDDhmNb0FrXAtBYdRNFtU87fQepXy/GbPc5Oey4h+17FGNXH5vI7wGqpXUxv70SO6J+xE+B
+      yGgMABmNASCjMQBkNAaAjMYAkNHa//ouoj5yf3UFv1h4Cq0BywI+OX8Rb42NH9iPAaBjYbNc
+      xIP1tVr726fORurHAJARhMyiEq7Uf/D62jMGgI7M01cb+OLxo1r7o7PncHl65kjGzuT/C6ub
+      d2ptjR8D8BgAOjq5oIJHG/XDlCszsz2czTZ+CkRGYwDIaJEOgUr5LOafr2ByYhTZQgWpGBBa
+      MaSTCYRSYnyMiwbQYIoUgFgyiaCQQ8Z3obSNinCgdQH3Hn6Ft9//iEsk9eGY/bhEUuNzvN/t
+      Wh1bq4YlkBq20bREkpQQENECUMzl4MU8xOJJZDNZ+JYNafs4f+kyCtlNjM5Nc4mkPhuzH5dI
+      anyObdve83btjG3ZDUsgNWy7aYmk1/trpFGGR8ZxeWT7rNrpE71/507UKXwTTEZjAMhoDAAZ
+      jQEgozEAZDQGgIzGAJDRGAAyGgNARmMAyGgMABmNASCjMQBkNAaAjBa5IuzR10+QGptArlBC
+      OgaElo9U3IeyfZyYner2PIm6IlIA/EQcjtYoC43RoTiUZcHXAvNPvsaFax+yIqwPx2RFWAcr
+      wsqFIryhNKbHU9jMl5HyAWEP4d3rMxCiDMcZYUVYn43JirAOVoQNpcdwMT0GABgda2leRH1t
+      zz+7z54+wU//5ScIjno2REesKQCVUh6LTx8hHzaurEp0/DQFwIKFVDoN6MaVVYmOn6YA+Ikh
+      KAhsLq/yFYCOvT3fAyT8IXz6e5/BO+rZEB2xPQOgAUgR8hWAjr09AzDkO5hfXELrp6aIBsue
+      AVhZf47HXz1Be+cBiQZH04mwzaXnQHIGv/PROcR7MSOiI9QUgNT4OJa+/HeUMIor196B34tZ
+      EbWoEizh1daXtXYgzgGYO7Bf0yGQG0viyntvQ5R5HpgGRygyKJQf1P4JmYvUrykAG4uP8HBx
+      DcMjqY5PkqjfNAVASA3HsWFbFs8E07HX9B5g5q2L+O7sKWS2iqheSBtWiphfXMbU5AjWM0WM
+      D3sIrTiGEz6ElEin+GpBg2nPy6F/efcWbt+ex5/8+Z8iAcCyXSRchZcrG4gnhrBVqEDrAuZ/
+      u4TzV2+yIKYPxzSvIGb/bUcuiMm/WsHaRgWTJyZrrwBb68tYzQU4MTWOF8trGBlyIe0YTpw5
+      jUIuh/EUl0jqtzHNK4jZf9uRC2JcPwYvFLhw7UrtDcL43BmMv/5EaWaWSyTR8bFHAOK48Z3v
+      wLIcfmUEdZSQOeRLD2rtUJ7p4Wy27RmA6WmeA6bOC8N1bObqJ6sqwRUA13o3IfB7gchwDAAZ
+      jQEgozEAZDQGgIzGAJDRGAAyWnvnunvs1tPHWMhsQmsNy7Lww/euI9bmaXsy20DuNQuZTfzf
+      ylKt/ftXrvZwNjTIeAhERmMAyGgMABkt2gIZ+Syezi9geGQcuUIZqRggbB/pRBxCW5iZnuz2
+      PIm6ItoSSbE4hoZHIJRCOuFBWhYcLfDo/m9w6ebHR14Rtmd1jxV9bFaEdW/c/frKQagI28tW
+      ZhOFSgUTIylkCgHSvkLoJnD56rcQlnJwhsaPtCLsTdU9UbEirHvj7tfXGYSKsL2MTs1idGq7
+      Emy6pWkR9Te+CSajMQBkNAaAjMYAkNEYADIaA0BGYwDIaAwAGY0BIKMNZEEM9aeyEPjLL35a
+      a78zPYs/uvF+D2d0MAaAOkrtuOis3QvxjhIPgchoHQvAaj6Hz79+gMXMZqc2SdR1kQ6BDnop
+      sywLq4U8/vXrh0h6Pk6PjnVkcmSWr1aX8SKbhdIKtmXj47e+gYTndXXMSAEIygU8WVxB0lUI
+      7Th0KYvQ9pGwAXd4DKdmd1eEtXPsd9jjxVb7tzveYeY5SGO217f59gdtY+fvv1pdwZ3nC7X2
+      zZOnET/E191EGTtaRVh8COmhOHxb4/HiCqanxuFoiVdrazg9MQetNbTaHky/rkRqdZKNBQtR
+      +lRJKSGt6Edz7axHdph+vRizExVhe7nzfAGZcgkAYFs2Pj1/ofY7KXf30Vrv2heaKsL07n2l
+      sapLKhl5X9K6uSJs17b32mcgowWgUsyhWCxhaGoSZ87GkY7bEHYcJ0+egZQCtm3Dsrd3YOsN
+      VT5vwoqw7vTrVkXYL5dfYv71+zzPtvH9S5frfRpua1nWrm00VYRZDVVbDb937OjPq2V1sSIs
+      PpTGhQtpAMBo02/9SBNsVApD3Hr6GPr1y+ap9CiuzB68tD1RJ/XsPEBFCPzsyaNa++bJ05ED
+      EIpXKAcv6j8YgM+bqT8N5ImwbPFXWMv8vNZW+scAYr2bEA0snggjozEAZDQGgIzGAJDRGAAy
+      GgNARmMAyGgMABltIE+EUb/SUCqot3R7X69+lBgA6hitQ7xY/7taey7xAYDf7d2EIuAhEBkt
+      0iuAFAE2swWkEi7WtspI+UBoxzAU8yGlxPDwULfnSdQV0UoilUaxVEQhH0IrjVdlC9BbeLa8
+      jHPv3EBCSghRQLH8DGF4OtLyNo2FDlpHXxZnz+VuWlhSh0sktT/uzu1pYNdtmp9Tvfv3By1j
+      tEdBTOR9optLJImwjJcvnmN6YgLZUoi0rxE6Pmbm5lDI5zExkkQg1rCx9QUq4htw3esHbrOx
+      UMOyohfSsCDmYN0qiNn52FvA7oIX3ficHlAQ01i0cpiCmG4ukRQfGsGHH3wQaSJEg4SfAlHf
+      yObvYmnjVq0t1YcAkl0dkwGglpSDlyiWlwAAntPZ3UeqIoTM7PhJ/bg+H1Tw+aMHtfa5sQlc
+      P3Hy0GMyANSSbOEuNra2d0Tf8QH82ZGMWxECtxfna22ldUcCwPMAZDQGgIzGAJDRGAAyGgNA
+      RuvZp0AaCkLma22lKr2aChmsZwGQqoiljX+otTOjnwDg2WY6WjwP0GVb5TLk629B9lwXI/FE
+      r6dEOzAAXfa3/30bK/kcAGDYj+EvPvmsxzOinRgAGghaKwiZq7WV7sx7RgaABoJUeSxt/GOt
+      nR3/DMC3D73dlgKwvvIS2ZJE3BYIbR/pRBxCAdNTE4eeSD/TWuNVqQgpJRzHgec4SMfivZ5W
+      W4SUyFbKtXbC9ZD021vj4ThoKQBSCFQqAbxkDLYK8PDeQ1y6+fGuyqOoFUzqgOqh/Rx1RZhU
+      Cn9962e19sWJKfxxxAWgd881+n2s6nRF2GI2g7+584ta+7tvncf3vnmx1v75wjN8ufB0u9zL
+      Av7g6rdwKj1SvwcNBWYdrQjb53nda/ml/arJOloRVhWLxWAVQrgQEE4Ml65cQ1jMwhmarFXc
+      NFbivIndVBFm9W9FWMOD2/5co/er6nRFWFMlnr17ToGSyJbrrxAKaKis2j1ORyvC9nleHWd3
+      38Ztd7UirGp0cgajkzOtdCHqa7wUgozGAJDRjPoY9D/mn+LfHj+qvr/DH16/iXPjx/sTLNqf
+      UQEIpEAuqJ9AEYdY+Pq4KlaeYT1b/8RLyHcAHN8/EkYFoH0aodistaTq7jcVdJNUJeSL92vt
+      IBwBUF/sOhSbKFWe7rh9GccZAxCB1grLr/651p5N3ATwaaS+q5s/wYvMIgBgJDECoLfXAkmZ
+      x2a+vsRsKTjRw9n0HgPQZUpXoPT2X1GlBvPs8XHGT4HIaEa9AgThOnLFe7W2VO8BmOrdhKjn
+      jApAOXiBTP52rS3kD3o4G+oHRgVgkBSDAJlyCVIqOI6N0UQCSc/cqza7pa0AlPJbELaHuOdC
+      KYVYLNbpeRnv3uoy/uk3v661f3T1Bm6cONXDGR1PbQRAY2llFQoahUwWs+cuYoYBoAHV1iuA
+      EgGE7SKZTCCoBAd3oJaVg5dYy3xea1fCOQB8Bei0NgJg4dz5i9CWBbvx4nDqGKnyKAcL9bYs
+      9HA2x5eltyGfzx98633k8jl4MReu48G1D86V1hoVUa5V6riOC8+J9iYvkAGUklBKwbZtxNx4
+      U8HDXoQUECqs9fMcH4598BJC1blW+9mWA9+NNteKqEBr9bqvg7gX7WSYUAJCtj7XqnK5DM/z
+      mgpglFYIRP16KMd24TlefVwZQihRG9d3fNg7xq3en6q4V/+al4MeJ6kkQlk/YmjcV0IZQO56
+      XmOwLPsN83Z27S8HPV6BCKB0vWKtus9Yut1V1BrkcjmkUqmW+1WHj7IDN6re2X7v14sxC4UC
+      4vF422uE9eK+9mLs/wdF7oOtcZJdBQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Referrals by Incident Type' width='192'>
+      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
+      jQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
