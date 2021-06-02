@@ -1,5 +1,7 @@
 # fema-ihp-bu
 
+This is a dimensional data warehouse that seeks to provide insights into the raw data that FEMA provides publicly for its Individual and Housing Program.  I used Jupyter Notebook, Python (Pandas, NumPy, Pyodbc), and SQL to perform ETL on the dataset, loading the warehouse based on the schema I designed.  I also created visualizations using Tableau from the data warehouse to provide targeted insights that answered the key business questions of the project (see README file). Note: If etl_IHP.ipynb is throwing an error on load, it can be viewed using nbviewer by following this link: https://nbviewer.jupyter.org/github/kristinvmartin/datawarehouse-fema-bu/blob/main/etl_IHP.ipynb, or you can view the CODEONLY file, which has the scripts without the output.
+
 See .docx file for complete report submitted for coursework at Boston University for the CS 689 (Designing & Implementing a Data Warehouse) Final Term Project.
 
 Visualization files from Tableau, SQL scripts, and IPYNB files are included in this repository.
